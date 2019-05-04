@@ -39,3 +39,24 @@
     background: #007bff;
     background: linear-gradient(to right, #0062E6, #33AEFF);
   }
+  nav .text-col{
+      color: white;
+  }
+  #logo{
+      height: 50px;
+      width: 50px;
+      margin-right: 2%;
+      -webkit-filter: invert(100%);
+      filter: invert(100%);
+  }
+  .user{
+      margin-top: 5%;
+      border: 2px solid white;
+      border-radius: 5px;
+  }
+  #userimg{
+      height: 300px;
+      width: 250px;
+      background-color: pink;
+  
+  }
