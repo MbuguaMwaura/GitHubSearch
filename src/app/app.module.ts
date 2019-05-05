@@ -8,13 +8,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { GitsearchComponent } from './gitsearch/gitsearch.component';
 import { OtherComponent } from './other/other.component';
 import { RoutingModule } from './routing/routing.module';
+import { UserdetailsComponent } from './userdetails/userdetails.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MyGithubComponent,
     GitsearchComponent,
-    OtherComponent
+    OtherComponent,
+    UserdetailsComponent
   ],
   imports: [
     BrowserModule,

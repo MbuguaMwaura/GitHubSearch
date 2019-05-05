@@ -22,16 +22,22 @@
   </div>
 
   <div class="row">
-    <div *ngFor='let search of searchgit; let i = "index"'>
 
-
-      <h5 (click)="searchRepo(gitsearch)"><img src="{{search.avatar_url}}" class="rounded-circle" alt="Cinque Terre"
-          width="50" height="50">
-        {{search.login}} </h5>
-
-
-
-    </div>
+  
+    
+      <div class="col-md-4" *ngFor='let search of searchgit; let i = "index"'>
+        <div class="card">
+          <div class="card-body">
+            <div class="card-title">
+              <h5 (click)="searchRepo(gitsearch)"><img src="{{search.avatar_url}}" class="rounded-circle"
+                  alt="Cinque Terre" width="50" height="50">
+                {{search.login}} </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+ 
 
 
     <div class="row">
@@ -50,4 +56,6 @@
     </div>
 
   </div>
+
+
 </div>
