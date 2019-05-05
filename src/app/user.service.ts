@@ -8,7 +8,11 @@ import { environment } from '../environments/environment';
 })
 export class UserService {
 
-  user:User
+	user:User
+
+
+
+  
 
   userInformation() {
 		interface ApiResponse {

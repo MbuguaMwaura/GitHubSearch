@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { MyGithubComponent } from './my-github/my-github.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GitsearchComponent } from './gitsearch/gitsearch.component';
+import { OtherComponent } from './other/other.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MyGithubComponent,
-    GitsearchComponent
+    GitsearchComponent,
+    OtherComponent
   ],
   imports: [
     BrowserModule,

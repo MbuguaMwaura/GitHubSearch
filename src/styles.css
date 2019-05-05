@@ -53,6 +53,8 @@
       margin-top: 5%;
       border: 2px solid white;
       border-radius: 5px;
+      background-color: rgb(0, 0, 0,0.3);
+
   }
   #userimg{
       height: 300px;
@@ -74,4 +76,18 @@
     text-align: center;
     pointer-events: none;
     color: #aaa;
+}
+.card{
+    margin-bottom: 2%;
+}
+hr{
+    /* -webkit-filter: invert(100%);
+    filter: invert(100%); */
+    border-style: inset;
+    border-width: 1px;
+    display: block;
+}
+#btnuser{
+  width: 100%;
+  border-radius: 10px;
 }
