@@ -10,6 +10,8 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 export class GitsearchComponent implements OnInit {
   searchgit = [];
 	gitress: any;
+	repo:any;
+	searchrepo = [];
 
 	getUser(login){
 		for(let detail of this.searchgit){
@@ -25,9 +27,7 @@ export class GitsearchComponent implements OnInit {
 
 		var link = 'https://api.github.com/search/users?q=' + searchVal;
 
-		var repolink = 'https://api.github.com/users/'+ searchVal+'/repos';
 
-		console.log(repolink);
 
 		console.log(link);
 
@@ -52,6 +52,23 @@ export class GitsearchComponent implements OnInit {
     });
     return promise;
 	}
+
+
+	searchRepo(gitsearch) {
+
+		var searchVal = gitsearch.value;
+
+		var repolink = 'https://api.github.com/users/'+ searchVal+'/repos';
+
+			this.http.get(repolink).subscribe((data) => {
+				this.repo = data;
+	
+				for (var i = 0; i < this.repo.length; i++) {
+					this.searchrepo.push(this.repo[i]);
+				}
+				console.log(this.searchrepo);
+			});
+		}
 
 	constructor(private http: HttpClient, private route:ActivatedRoute) {}
 
