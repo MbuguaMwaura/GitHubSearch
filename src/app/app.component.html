@@ -8,16 +8,15 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Click Me!
-          </a>
-            <!-- Here's the magic. Add the .animate and .slide-in classes to your .dropdown-menu and you're all set! -->
-            <div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
+            
+          <div  id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a routerLink='/my-github' routerLinkActive='active'>My Github</a></li>
+              <li><a routerLink='/gitsearch' routerLinkActive='active'>Searchs</a></li>
+      
+            </ul>
+      
+          </div>
           </li>
         </ul>
       </div>
@@ -25,4 +24,4 @@
   </nav>
   
 
-<app-my-github></app-my-github>
+  <router-outlet></router-outlet>

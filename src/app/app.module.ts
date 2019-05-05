@@ -7,6 +7,7 @@ import { MyGithubComponent } from './my-github/my-github.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GitsearchComponent } from './gitsearch/gitsearch.component';
 import { OtherComponent } from './other/other.component';
+import { RoutingModule } from './routing/routing.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { OtherComponent } from './other/other.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    RoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
