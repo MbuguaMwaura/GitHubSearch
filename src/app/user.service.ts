@@ -10,7 +10,7 @@ export class UserService {
 
   user:User
 
-  userRequest() {
+  userInformation() {
 		interface ApiResponse {
 			login: string;
 			id: number;

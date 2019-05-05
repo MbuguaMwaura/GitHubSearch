@@ -1,15 +1,40 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../user.service';
+import { User } from '../user';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-my-github',
   templateUrl: './my-github.component.html',
-  styleUrls: ['./my-github.component.css']
+  styleUrls: ['./my-github.component.css'],
+  providers: [UserService]
 })
 export class MyGithubComponent implements OnInit {
+  
+  user:User
 
-  constructor() { }
+  result: any;
 
-  ngOnInit() {
+	getRepos() {
+		var repos = 'https://api.github.com/users/MbuguaMwaura/repos';
+
+
+		this.http.get(repos).subscribe((data) => {
+			this.result = data;
+      console.log(this.result);
+      
+      
+		});
+	}
+
+
+  constructor(private userService:UserService, private http: HttpClient) {
+    this.user = new User("",0,"","")
+   }
+
+
+   ngOnInit() {
+    this.userService.userInformation();
+    this.user = this.userService.user
   }
-
 }

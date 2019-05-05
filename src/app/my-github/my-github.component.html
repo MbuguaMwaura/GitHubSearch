@@ -7,9 +7,9 @@
         <div class="card">
             <img class="card-img-top" src="../../assets/images/github.svg" alt="Card image cap">
             <div class="card-body">
-                <p class="card-text">User Name</p>
+                <p class="card-text">{{user.name}}</p>
 
-                <button class="btn btn-primary">Repos</button>
+                <button class="btn btn-primary" (click)="getRepos()">REPOs</button>
             </div>
 
         </div>
@@ -19,88 +19,20 @@
         <p>add search component here</p>
      </div>
     
-        <div class="col-sm-3">
+        <div class="col-sm-4" *ngFor='let repo of result; let i = "index"'>
             <div class="card">
-                <div class="card-body">
-                    <h3 class="card-title">Card Title</h3>
-                    <p class="card-text">Content of the card.</p>
-                    <a href="#" class="btn btn-primary">More</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-3">
-            <div class="card">
-                <div class="card-body">
-                    <h3 class="card-title">Card Title</h3>
-                    <p class="card-text">Content of the card.</p>
-                    <a href="#" class="btn btn-primary">More</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-3">
-            <div class="card">
-                <div class="card-body">
-                    <h3 class="card-title">Card Title</h3>
-                    <p class="card-text">Content of the card.</p>
-                    <a href="#" class="btn btn-primary">More</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-3">
-            <div class="card">
-                <div class="card-body">
-                    <h3 class="card-title">Card Title</h3>
-                    <p class="card-text">Content of the card.</p>
-                    <a href="#" class="btn btn-primary">More</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-3">
-            <div class="card">
-                <div class="card-body">
-                    <h3 class="card-title">Card Title</h3>
-                    <p class="card-text">Content of the card.</p>
-                    <a href="#" class="btn btn-primary">More</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-3">
-            <div class="card">
-                <div class="card-body">
-                    <h3 class="card-title">Card Title</h3>
-                    <p class="card-text">Content of the card.</p>
-                    <a href="#" class="btn btn-primary">More</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-3">
-            <div class="card">
-                <div class="card-body">
-                    <h3 class="card-title">Card Title</h3>
-                    <p class="card-text">Content of the card.</p>
-                    <a href="#" class="btn btn-primary">More</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-3">
-            <div class="card">
-                <div class="card-body">
-                    <h3 class="card-title">Card Title</h3>
-                    <p class="card-text">Content of the card.</p>
-                    <a href="#" class="btn btn-primary">More</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-3">
-            <div class="card">
-                <div class="card-body">
-                    <h3 class="card-title">Card Title</h3>
-                    <p class="card-text">Content of the card.</p>
-                    <a href="#" class="btn btn-primary">More</a>
+                <div class="card-body" >
+                    <h3 class="card-title">{{repo.name}}</h3>
+                    <p class="card-text"><a href="{{repo.html_url}}">{{repo.html_url}}</a></p>
+                   
                 </div>
             </div>
         </div>  
 
     
   </div>
+ 
+  
+      
 </div>
+
