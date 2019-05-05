@@ -1,21 +1,30 @@
-<div class="input-group">
-  <input type="text" class="form-control" placeholder="Search" #gitsearch>
-  <div class="input-group-append">
-    <button class="btn btn-secondary" type="button" (click)="githubSearch(gitsearch)">
-      <span class="input-group-addon bg-white border-left-0"><i class="ion-search"></i></span>search
-    </button>
+<div class="container">
+  <br>
+  <div class="row">
+      <div class="col-md-4"><hr></div>
+<div class="col-md-4">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Search" #gitsearch>
+      <div class="input-group-append">
+        <button class="btn btn-secondary" type="button" (click)="githubSearch(gitsearch)">
+          <span class="input-group-addon bg-white border-left-0"><i class="ion-search"></i></span>search
+        </button>
+      </div>
+    </div>
+
+    </div>
+    <div class="col-md-4"><hr></div>
+    
   </div>
 
+  <div class="row">
+    <div *ngFor='let search of searchgit; let i = "index"'>
 
-</div>
-<hr>
-
-<div *ngFor='let search of searchgit; let i = "index"'>
- 
-  <button id="btnuser"> <h5 (click)="goToUser()" ><img src="{{search.avatar_url}}" class="rounded-circle" alt="Cinque Terre" width="50" height="50">
-    {{search.login}} </h5> </button>
-
-
-
- 
+      <button id="btnuser">
+        <h5 (click)="goToUser()"><img src="{{search.avatar_url}}" class="rounded-circle" alt="Cinque Terre" width="50"
+            height="50">
+          {{search.login}} </h5>
+      </button>
+    </div>
+  </div>
 </div>

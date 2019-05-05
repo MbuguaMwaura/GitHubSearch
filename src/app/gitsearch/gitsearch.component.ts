@@ -25,6 +25,10 @@ export class GitsearchComponent implements OnInit {
 
 		var link = 'https://api.github.com/search/users?q=' + searchVal;
 
+		var repolink = 'https://api.github.com/users/'+ searchVal+'/repos';
+
+		console.log(repolink);
+
 		console.log(link);
 
 		const promise = new Promise((resolve, reject) => {
