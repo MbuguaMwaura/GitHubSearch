@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import{Router} from '@angular/router';
+import { Repo } from '../repo';
 
 @Component({
   selector: 'app-gitsearch',
@@ -14,19 +15,6 @@ export class GitsearchComponent implements OnInit {
 	repo:any;
 	searchrepo = [];
 
-	goToUrl(id){
-		this.router.navigate(["/other",id])
-		alert(id)
-  }
-
-
-	getUser(login){
-		for(let detail of this.searchgit){
-		  if(detail.login == login){
-			return detail;
-		  }
-		}
-	  }	
 
 
 	githubSearch(gitsearch) {
@@ -49,7 +37,9 @@ export class GitsearchComponent implements OnInit {
           for(let i=0; i < this.gitress['items'].length; i++ ){
             this.searchgit.push(this.gitress['items'][i])
           }
-          console.log(this.searchgit[0]);
+					console.log(this.searchgit[0]);
+					let vid = this.route.snapshot.paramMap.get("id")
+					console.log(vid)
 				},
 				(error) => {
 					alert('error');
@@ -75,11 +65,30 @@ export class GitsearchComponent implements OnInit {
 				}
 				console.log(this.searchrepo);
 			});
+		
 		}
+
+
+	goToUrl(id){
+		this.router.navigate(["/other",id])
+		alert(id)
+  }
+
+
+	getRepo(id){
+		for(let detail of this.searchrepo){
+		  if(detail.id == id){
+			return detail;
+		  }
+		}
+	  }	
+
+
 
 	constructor(private http: HttpClient, private route:ActivatedRoute, private router:Router) {}
 
 	ngOnInit() {
+		
 	
 	}
 }
