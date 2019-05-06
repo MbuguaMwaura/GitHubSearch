@@ -57,6 +57,8 @@ export class GitsearchComponent implements OnInit {
 
 		var repolink = 'https://api.github.com/users/'+ searchVal+'/repos';
 
+		console.log(repolink)
+
 			this.http.get(repolink).subscribe((data) => {
 				this.repo = data;
 	
