@@ -1,25 +1,21 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-dark ">
     <div class="container">
-      <img id="logo" class="navbar-brand" src="../assets/images/github.svg" alt=""> <a class="navbar-brand text-white" href="#">GITHUB</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item dropdown">
+      <img id="logo" class="navbar-brand" src="../assets/images/github.svg" alt="">  <a class="navbar-brand text-white" routerLink='/my-github' routerLinkActive='active'>GITHUB</a>
+      
+     
+    
+
             
           <div  id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-              <li><a routerLink='/my-github' routerLinkActive='active'>My Github</a></li>
-              <li><a routerLink='/gitsearch' routerLinkActive='active'>Searchs</a></li>
+              <li class="list"><a routerLink='/my-github' routerLinkActive='active'>My Github</a></li>
+              
+              <li class="list"><a routerLink='/gitsearch' routerLinkActive='active'>Search</a></li>
       
             </ul>
       
           </div>
-          </li>
-        </ul>
-      </div>
+      
     </div>
   </nav>
   
