@@ -1,14 +1,18 @@
+
+<button class="btn btn-primary" (click)="searchRepo(gitsearch)">{{search.login}}'s repos</button>
+
 <div class="container">
 
+
     <div class="row">
-        <div class="col-sm-4" *ngFor='let repo of result; let i = "index"'>
-            <div class="card">
-                <div class="card-body" >
-                    <h3 class="card-title">{{repo.name}}</h3>
-                    <p class="card-text"><a href="{{repo.html_url}}">{{repo.html_url}}</a> <br> {{repo.description}} </p>
-                </div>
+        <div class="col-md-2" *ngFor='let object of searchrepo; let i = "index"'>
+  
+          <div class="card ">
+            <div class="card-body">
+              <p class="card-text">{{object.name}}</p>
             </div>
-        </div>  
-  </div>
+          </div>
+        </div>
+      </div>
 
 </div>

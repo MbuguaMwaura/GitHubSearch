@@ -28,11 +28,11 @@
       <div class="col-md-4" *ngFor='let search of searchgit; let i = "index"'>
         <div class="card">
           <div class="card-body">
-            <div class="card-title">
-              <h5 (click)="searchRepo(gitsearch)"><img src="{{search.avatar_url}}" class="rounded-circle"
+            
+              <h5 class="card-title" ><img src="{{search.avatar_url}}" class="rounded-circle"
                   alt="Cinque Terre" width="50" height="50">
                 {{search.login}} </h5>
-            </div>
+            <p class="card-text"> <button class="btn btn-primary" (click)=goToUrl(other.id)>{{search.login}}'s repos</button> </p>
           </div>
         </div>
       </div>
@@ -40,20 +40,6 @@
  
 
 
-    <div class="row">
-      <div class="col-md-2" *ngFor='let object of searchrepo; let i = "index"'>
-
-        <div class="card ">
-          <div class="card-body">
-            <p class="card-text">{{object.name}}</p>
-
-
-
-          </div>
-        </div>
-
-      </div>
-    </div>
 
   </div>
 
