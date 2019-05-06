@@ -21,7 +21,7 @@ export class MyGithubComponent implements OnInit {
 
 
 	getRepos() {
-		var repos = 'https://api.github.com/users/MbuguaMwaura/repos';
+		const repos = 'https://api.github.com/users/MbuguaMwaura/repos';
 
 
 		this.http.get(repos).subscribe((data) => {
