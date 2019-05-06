@@ -91,3 +91,7 @@ hr{
   width: 100%;
   border-radius: 10px;
 }
+#repos{
+  background-color: white;
+  border-radius: 6px;
+}

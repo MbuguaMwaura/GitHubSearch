@@ -32,7 +32,7 @@
               <h5 class="card-title" ><img src="{{search.avatar_url}}" class="rounded-circle"
                   alt="Cinque Terre" width="50" height="50">
                 {{search.login}} </h5>
-            <p class="card-text"> <button class="btn btn-primary" (click)=goToUrl(other.id)>{{search.login}}'s repos</button> </p>
+            <p class="card-text"> <button class="btn btn-primary" (click)='searchRepo(gitsearch)'>{{search.login}}'s repos</button> </p>
           </div>
         </div>
       </div>
@@ -42,6 +42,21 @@
 
 
   </div>
+
+   <div id="repos" class="row">
+
+     <!-- <p> {{search.login}}'s repos </p> -->
+      
+        <div *ngFor='let object of searchrepo; let i = "index"'>
+  
+          <div class="col-md-12 ">
+           
+              <p><a href="{{object.html_url}}">{{object.name}}</a></p> 
+   
+          </div>
+        </div>
+      </div>
+
 
 
 </div>
