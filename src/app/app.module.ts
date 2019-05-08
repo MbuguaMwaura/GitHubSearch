@@ -9,6 +9,7 @@ import { GitsearchComponent } from './gitsearch/gitsearch.component';
 import { OtherComponent } from './other/other.component';
 import { RoutingModule } from './routing/routing.module';
 import { UserdetailsComponent } from './userdetails/userdetails.component';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { UserdetailsComponent } from './userdetails/userdetails.component';
     MyGithubComponent,
     GitsearchComponent,
     OtherComponent,
-    UserdetailsComponent
+    UserdetailsComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
