@@ -22,7 +22,9 @@ export class UserService {
 			bio: string;
     }
     const promise = new Promise((resolve, reject) => {
-			this.http.get<ApiResponse>(environment.apiGitHub).toPromise().then(
+		var link = "https://api.github.com/users/MbuguaMwaura?access_token=337b7ab5cddcc4d88c5a225ea40b3f02d15cf3e1";
+
+			this.http.get<ApiResponse>(link).toPromise().then(
 				(response) => {
 					this.user.name = response.login;
 					this.user.id = response.id;
