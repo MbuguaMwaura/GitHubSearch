@@ -14,17 +14,25 @@ export class GitsearchComponent implements OnInit {
 	gitress: any;
 	repo:any;
 	searchrepo = [];
-
-
+	search = [];
+	searchlogin:any;
+	repolink: any;
+	links = [];
 
 	githubSearch(gitsearch) {
 		var searchVal = gitsearch.value;
 
-		var link = 'https://api.github.com/search/users?q=' + searchVal;
+		var link = 'https://api.github.com/search/users?q=' + searchVal; 
 
-
+		
 
 		console.log(link);
+
+
+
+
+
+
 
 		const promise = new Promise((resolve, reject) => {
 			this.http.get(link).toPromise().then(
@@ -35,55 +43,71 @@ export class GitsearchComponent implements OnInit {
           console.log(this.gitress['items']);
           
           for(let i=0; i < this.gitress['items'].length; i++ ){
-            this.searchgit.push(this.gitress['items'][i])
-          }
-					console.log(this.searchgit[0]);
-					let vid = this.route.snapshot.paramMap.get("id")
-					console.log(vid)
+						this.searchgit.push(this.gitress['items'][i])
+						
+          
+					
+				
+
+
+				}
+						
 				},
 				(error) => {
 					alert('error');
 					reject(error);
 				}
 			);
-    });
+		});
+		for(let i=0; i < this.search.length; i++ ){
+			 
+		
+		
+
+		
+
+		
+		}
+		
     return promise;
 	}
 
 
-	searchRepo(gitsearch) {
+	// searchRepo() {
 
-		var searchVal = gitsearch.value;
+	// 	for(let i=0; i < this.searchgit.length; i++ ){
+	// 	this.search.push(	this.searchgit[i]['login']);
+	// 	}
 
-		var repolink = 'https://api.github.com/users/'+ searchVal+'/repos';
+	// 	this.http.get(this.links).subscribe((data) => {
+	// 		this.repo = data;
 
-		console.log(repolink)
+	// 		for (var i = 0; i < this.repo.length; i++) {
+	// 			this.searchrepo.push(this.repo[i]);
+	// 		}
+	// 		console.log(this.searchrepo);	
+	// 	});
 
-			this.http.get(repolink).subscribe((data) => {
-				this.repo = data;
-	
-				for (var i = 0; i < this.repo.length; i++) {
-					this.searchrepo.push(this.repo[i]);
+
+	// }
+
+	githubSearchrepo(gitsearchrepo){
+		var userlink = gitsearchrepo.value
+
+		var finallink = 'https://api.github.com/users/'+userlink+'/repos'
+
+		console.log(finallink)
+
+		this.http.get(finallink).subscribe((data)=>{
+			this.repo = data;
+			for (var i = 0; i < this.repo.length; i++) {
+							this.searchrepo.push(this.repo[i]);
 				}
-				console.log(this.searchrepo);
-			});
-		
-		}
 
-
-	goToUrl(id){
-		this.router.navigate(["/other",id])
-		alert(id)
-  }
-
-
-	getRepo(id){
-		for(let detail of this.searchrepo){
-		  if(detail.id == id){
-			return detail;
-		  }
-		}
-	  }	
+		})
+		console.log(this.searchrepo)
+	}
+	
 
 
 

@@ -1,9 +1,7 @@
 <div class="container">
   <br>
   <div class="row">
-    <div class="col-md-4">
-      <hr>
-    </div>
+  
     <div class="col-md-4">
       <div class="input-group">
         <input type="text" class="form-control" placeholder="Search" #gitsearch>
@@ -18,7 +16,16 @@
     <div class="col-md-4">
       <hr>
     </div>
-
+    <div class="col-md-4">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search" #gitsearchrepo>
+        <div class="input-group-append">
+          <button class="btn btn-secondary" type="button" (click)="githubSearchrepo(gitsearchrepo)">
+            <span class="input-group-addon bg-white border-left-0"><i class="ion-search"></i></span>search
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="row">
@@ -32,30 +39,36 @@
               <h5 class="card-title" ><img src="{{search.avatar_url}}" class="rounded-circle"
                   alt="Cinque Terre" width="50" height="50">
                 {{search.login}} </h5>
-            <p class="card-text"> <button class="btn btn-primary" (click)='searchRepo(gitsearch)'>{{search.login}}'s repos</button> </p>
+            
           </div>
         </div>
+
+        
+
       </div>
     
  
+      <div id="repos" class="row">
 
+        <!-- <p> {{search.login}}'s repos </p> -->
+        {{userlink}}
+        
+         
+           <div *ngFor='let object of searchrepo; let j = "repositories"'>
+     
+             <div class="col-md-12 ">
+               
+              
+                 <p><a href="{{object.html_url}}">{{object.name}}</a></p> 
+      
+             </div>
+           </div>
+         </div>
 
 
   </div>
 
-   <div id="repos" class="row">
-
-     <!-- <p> {{search.login}}'s repos </p> -->
-      
-        <div *ngFor='let object of searchrepo; let i = "index"'>
-  
-          <div class="col-md-12 ">
-           
-              <p><a href="{{object.html_url}}">{{object.name}}</a></p> 
    
-          </div>
-        </div>
-      </div>
 
 
 
