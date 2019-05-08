@@ -22,12 +22,12 @@
   </div>
   <br> <br>
   <div class="row">
-        <div class="col-sm-4" *ngFor='let repo of result; let i = "index"'>
-            <div class="card">
+        <div  class="col-sm-4" *ngFor='let repo of result; let i = "index"'>
+            <div id="mycards" class="card">
                 <div class="card-body" >
                     <h3 class="card-title">{{repo.name}}</h3>
                     <p class="card-text"><a href="{{repo.html_url}}">{{repo.html_url}}</a> <br> {{repo.description}} </p>
-                    
+                   
                    
                 </div>
             </div>
