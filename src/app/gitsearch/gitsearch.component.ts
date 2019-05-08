@@ -1,38 +1,35 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import{Router} from '@angular/router';
+import { Router } from '@angular/router';
 import { Repo } from '../repo';
 
 @Component({
-  selector: 'app-gitsearch',
-  templateUrl: './gitsearch.component.html',
-  styleUrls: ['./gitsearch.component.css']
+	selector: 'app-gitsearch',
+	templateUrl: './gitsearch.component.html',
+	styleUrls:
+		[
+			'./gitsearch.component.css'
+		]
 })
 export class GitsearchComponent implements OnInit {
-  searchgit = [];
+	searchgit = [];
 	gitress: any;
-	repo:any;
+	repo: any;
 	searchrepo = [];
 	search = [];
-	searchlogin:any;
+	searchlogin: any;
 	repolink: any;
 	links = [];
 
 	githubSearch(gitsearch) {
+		this.searchgit = [];
+
 		var searchVal = gitsearch.value;
 
-		var link = 'https://api.github.com/search/users?q=' + searchVal; 
-
-		
+		var link = 'https://api.github.com/search/users?q=' + searchVal;
 
 		console.log(link);
-
-
-
-
-
-
 
 		const promise = new Promise((resolve, reject) => {
 			this.http.get(link).toPromise().then(
@@ -40,18 +37,11 @@ export class GitsearchComponent implements OnInit {
 					this.gitress = response;
 					resolve();
 
-          console.log(this.gitress['items']);
-          
-          for(let i=0; i < this.gitress['items'].length; i++ ){
-						this.searchgit.push(this.gitress['items'][i])
-						
-          
-					
-				
+					console.log(this.gitress['items']);
 
-
-				}
-						
+					for (let i = 0; i < this.gitress['items'].length; i++) {
+						this.searchgit.push(this.gitress['items'][i]);
+					}
 				},
 				(error) => {
 					alert('error');
@@ -59,19 +49,10 @@ export class GitsearchComponent implements OnInit {
 				}
 			);
 		});
-		for(let i=0; i < this.search.length; i++ ){
-			 
-		
-		
+		for (let i = 0; i < this.search.length; i++) {}
 
-		
-
-		
-		}
-		
-    return promise;
+		return promise;
 	}
-
 
 	// searchRepo() {
 
@@ -85,36 +66,30 @@ export class GitsearchComponent implements OnInit {
 	// 		for (var i = 0; i < this.repo.length; i++) {
 	// 			this.searchrepo.push(this.repo[i]);
 	// 		}
-	// 		console.log(this.searchrepo);	
+	// 		console.log(this.searchrepo);
 	// 	});
-
 
 	// }
 
-	githubSearchrepo(gitsearchrepo){
-		var userlink = gitsearchrepo.value
+	githubSearchrepo(gitsearchrepo) {
+		this.searchrepo = [];
 
-		var finallink = 'https://api.github.com/users/'+userlink+'/repos'
+		var userlink = gitsearchrepo.value;
 
-		console.log(finallink)
+		var finallink = 'https://api.github.com/users/' + userlink + '/repos';
 
-		this.http.get(finallink).subscribe((data)=>{
+		console.log(finallink);
+
+		this.http.get(finallink).subscribe((data) => {
 			this.repo = data;
 			for (var i = 0; i < this.repo.length; i++) {
-							this.searchrepo.push(this.repo[i]);
-				}
-
-		})
-		console.log(this.searchrepo)
+				this.searchrepo.push(this.repo[i]);
+			}
+		});
+		console.log(this.searchrepo);
 	}
-	
 
+	constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) {}
 
-
-	constructor(private http: HttpClient, private route:ActivatedRoute, private router:Router) {}
-
-	ngOnInit() {
-		
-	
-	}
+	ngOnInit() {}
 }
